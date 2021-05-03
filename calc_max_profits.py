@@ -31,9 +31,16 @@ def calculate_max_profit_with_short_sell(prices: List[int]) -> int:
     Returns:
         max_profit: maximum profit possible with short selling
     """
-    raise NotImplementedError()
+    min_price = prices[0]
+    max_price = prices[0]
+    for curr_price in prices[1:]:
+        min_price = min(min_price, curr_price)
+        max_price = max(max_price, curr_price)
+    
+    return max_price - min_price
 
     
 if __name__ == "__main__":
     prices = [int(x) for x in sys.argv[1].split(',')]
-    print(calculate_max_profit(prices))
+    print(f"Max profit: {calculate_max_profit(prices)}") 
+    print(f"Max profit with short sell: {calculate_max_profit_with_short_sell(prices)}")

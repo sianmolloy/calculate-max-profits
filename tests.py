@@ -23,6 +23,16 @@ class TestCalcMaxProfits(unittest.TestCase):
     def test_calc_max_profit_with_short_sell(self):
         self.assertEqual(calculate_max_profit_with_short_sell([4, 7, 5, 9, 6, 2]), 7)
         self.assertEqual(calculate_max_profit_with_short_sell([2, 6, 3, 8, 5, 3]), 6)
+        self.assertEqual(calculate_max_profit_with_short_sell([10087, 2004, 756]), 9331)
+        #decending prices
+        self.assertEqual(calculate_max_profit_with_short_sell([10, 8, 5, 4, 3, 1]), 9)
+        #ascending prices
+        self.assertEqual(calculate_max_profit_with_short_sell([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 9)        
+        #uniform prices
+        self.assertEqual(calculate_max_profit_with_short_sell([7, 7, 7, 7, 7]), 0)
+        #min number of prices
+        self.assertEqual(calculate_max_profit_with_short_sell([1, 895]), 894)
+        self.assertEqual(calculate_max_profit_with_short_sell([895, 1]), 894)
 
 
 if __name__ == '__main__':
