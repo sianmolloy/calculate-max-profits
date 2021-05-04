@@ -2,9 +2,7 @@ import unittest
 from calc_max_profits import calculate_max_profit, calculate_max_profit_with_short_sell
 
 class TestCalcMaxProfits(unittest.TestCase):
-    """
-    Test Calc Max Profits
-    """
+    """Test Calculate Max Profits."""
 
     def test_calc_max_profit(self):
         self.assertEqual(calculate_max_profit([7, 5, 6, 10, 7, 4, 5, 8]), 5)
